@@ -8,6 +8,7 @@
 
     >
     <RelativeLayout
+        android:id="@+id/maintop_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/mainColor"
@@ -18,14 +19,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
         >
         <LinearLayout
         android:id="@+id/cityweather_layout"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="8dp"
+        android:layout_height="50dp"
+        android:paddingStart="10dp"
+        android:paddingRight="10dp"
         android:orientation="vertical"
         >
         <RelativeLayout
@@ -61,7 +64,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="晴 25℃"
-                android:textColor="#000000"
+                android:textSize="13sp"
+                android:textColor="#2F4F4F"
                 />
         </RelativeLayout>
 
@@ -70,10 +74,10 @@
         <RelativeLayout
         android:id="@+id/search_top_layout"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:background="@drawable/stroketext"
         android:layout_toRightOf="@id/cityweather_layout"
-        android:padding="8dp"
+        android:padding="10dp"
         >
 
         <ImageView
@@ -99,19 +103,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/search_top_layout"
-            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
             android:layout_centerHorizontal="true"
             >
            <ImageView
-               android:layout_width="50dp"
-               android:layout_height="50dp"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
                android:src="@mipmap/yuyin"
                android:padding="5dp"
                android:layout_weight="1"
                />
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@mipmap/jia"
                 android:padding="5dp"
                 android:layout_weight="1"
@@ -121,21 +125,117 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_below="@+id/toplayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="5dp"
         >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:text="热搜："
-        />
-    </LinearLayout>
+        <TextView
+            android:id="@+id/resou"
+            style="@style/resou_text"
+            android:text="热搜："
+            />
+
+        <TextView
+            android:id="@+id/resouitem_1"
+            android:text="都晟酒店"
+            android:layout_toRightOf="@+id/resou"
+            android:layout_marginLeft="10dp"
+            style="@style/resou_text"
+            />
+
+        <TextView
+            android:id="@+id/line1"
+            style="@style/resou_line"
+            android:layout_toRightOf="@+id/resouitem_1"
+            />
+
+        <TextView
+            android:id="@+id/resouitem_2"
+            android:text="水果"
+            android:layout_toRightOf="@+id/line1"
+            android:layout_marginLeft="5dp"
+            style="@style/resou_text"
+            />
+        <TextView
+            android:id="@+id/line2"
+            style="@style/resou_line"
+            android:layout_toRightOf="@+id/resouitem_2"
+            />
+        <TextView
+            android:id="@+id/resouitem_3"
+            android:text="奶茶外卖"
+            android:layout_toRightOf="@+id/line2"
+            android:layout_marginLeft="5dp"
+            style="@style/resou_text"
+            />
+        <TextView
+            android:id="@+id/line3"
+            style="@style/resou_line"
+            android:layout_toRightOf="@+id/resouitem_3"
+            />
+        <TextView
+            android:id="@+id/resouitem_4"
+            android:text="水果捞"
+            android:layout_toRightOf="@+id/line3"
+            android:layout_marginLeft="5dp"
+            style="@style/resou_text"
+            />
+        <TextView
+            android:id="@+id/line4"
+            style="@style/resou_line"
+            android:layout_toRightOf="@+id/resouitem_4"
+
+            />
+        <TextView
+            android:id="@+id/resouitem_5"
+            android:text="自助餐"
+            android:layout_toRightOf="@+id/line4"
+            android:layout_marginLeft="5dp"
+            style="@style/resou_text"
+            />
     </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/maintop_layout"
+        >
+
+        <GridView
+            android:id="@+id/iconGv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:numColumns="5"
+            android:padding="10dp"
+            />
+        <LinearLayout
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iconGv"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+        <ImageView
+            android:id="@+id/first_page_icon"
+            android:layout_width="20dp"
+            android:layout_height="5dp"
+            android:src="@mipmap/huidian"
+            android:layout_weight="1"
+        />
+        <ImageView
+            android:id="@+id/second_page_icon"
+            android:layout_width="20dp"
+            android:layout_height="5dp"
+            android:src="@mipmap/huidian"
+            android:layout_weight="1"
+            />
+        </LinearLayout>
+    </RelativeLayout>
+
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottomNavigationBar"
         android:layout_width="match_parent"
