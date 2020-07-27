@@ -112,7 +112,6 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_centerVertical="true"
-
                     android:src="@mipmap/yuyin" />
 
                 <ImageView
@@ -201,14 +200,27 @@
     </RelativeLayout>
     </RelativeLayout>
 
-    <androidx.viewpager.widget.ViewPager
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/maintop_layout"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+    <com.example.copymt.WrapContentHeightViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/maintop_layout"
-        >
-    </androidx.viewpager.widget.ViewPager>
+        />
 
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/viewPager"
+        android:padding="10dp"
+        />
+    </LinearLayout>
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottomNavigationBar"
         android:layout_width="match_parent"

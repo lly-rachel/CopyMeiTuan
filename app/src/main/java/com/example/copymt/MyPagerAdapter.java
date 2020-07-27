@@ -3,6 +3,7 @@ package com.example.copymt;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.viewpager.widget.PagerAdapter;
 
@@ -27,9 +28,12 @@ public class MyPagerAdapter extends PagerAdapter {
             ImageView secondImage = view.findViewById(R.id.second_page_icon);
             Glide.with(view).load(R.mipmap.huidian).into(firstImage);
             Glide.with(view).load(R.mipmap.huangdian).into(secondImage);
-
         }
-        container.addView(view);
+        int childViewHeight = container.getHeight();
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, childViewHeight );//这里设置params的高度。
+        container.removeView(view);
+        container.addView(view, position , params);//使用这个params
+//        container.addView(view);
         return view;
     }
 

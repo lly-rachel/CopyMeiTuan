@@ -12,9 +12,13 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initIconDatas();
+
         initViews();
 
     }
@@ -57,9 +61,34 @@ public class MainActivity extends AppCompatActivity {
         //隐藏软键盘
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
+        initBanner();
+        initIconDatas();
         initGridView();
-        initStutas();
+//        initStutas();
         initBottomNavigationBar();
+    }
+
+    private void initBanner() {
+
+        Banner banner = findViewById(R.id.banner);
+
+        List<Integer> images = new ArrayList<>();
+        images.add(R.mipmap.pa);
+        images.add(R.mipmap.pb);
+        images.add(R.mipmap.pc);
+        images.add(R.mipmap.pd);
+        images.add(R.mipmap.pe);
+        images.add(R.mipmap.pf);
+
+        //右下方圆点
+        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR)
+                .setImageLoader(new GlideImageLoader())
+                .setBannerAnimation(Transformer.Default)
+                .setImages(images)
+                .isAutoPlay(true)
+                .setIndicatorGravity(BannerConfig.RIGHT)
+                .setDelayTime(4000)
+                .start();
     }
 
     private void initGridView() {
@@ -78,18 +107,18 @@ public class MainActivity extends AppCompatActivity {
         View pageTwo = inflater.inflate(R.layout.home_gridview,null);
         GridView gridViewTwo = pageTwo.findViewById(R.id.iconGv);
         gridViewTwo.setAdapter(new GridViewAdapter(pagerTwoData,this));
-        gridViewTwo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
+        gridViewTwo.setOnItemClickListener((parent, view, position, id) -> {
         });
+
 
         List<View> views = new ArrayList<>();
         views.add(pageOne);
         views.add(pageTwo);
         ViewPager viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(new MyPagerAdapter(views));
+
+
+
     }
 
     private void initStutas() {
