@@ -32,7 +32,7 @@ public class MyPagerAdapter extends PagerAdapter {
         int childViewHeight = container.getHeight();
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, childViewHeight );//这里设置params的高度。
         container.removeView(view);
-        container.addView(view, position , params);//使用这个params
+        container.addView(view, position , params);//使用这个param s
 //        container.addView(view);
         return view;
     }
