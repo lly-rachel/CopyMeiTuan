@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="icon_name_labels">
+        <item>外卖</item>
+        <item>美食</item>
+        <item>酒店/民宿</item>
+        <item>休闲/玩乐</item>
+        <item>电影/演出</item>
+        <item>丽人/美发</item>
+        <item>周边游/旅游</item>
+        <item>景点/门票</item>
+        <item>借钱</item>
+        <item>火车票/机票</item>
+        <item>免费领水果</item>
+        <item>充值中心</item>
+        <item>免费领福利</item>
+        <item>医疗/牙科</item>
+        <item>超市/药店</item>
+        <item>生活服务</item>
+        <item>结婚/摄像</item>
+        <item>健身/游泳</item>
+        <item>学习培训</item>
+        <item>亲子/乐园</item>
+        <item>医学美容</item>
+        <item>民宿/公寓</item>
+        <item>美团公益</item>
+        <item>美团互助</item>
+        <item>无障碍外卖</item>
+    </array>
+
+    <array name="icon">
+        <item>@mipmap/waimai</item>
+        <item>@mipmap/fenzu</item>
+        <item>@mipmap/jiudian</item>
+        <item>@mipmap/xiuxian</item>
+        <item>@mipmap/maoyan</item>
+        <item>@mipmap/meifa</item>
+        <item>@mipmap/lvyou</item>
+        <item>@mipmap/jingdian</item>
+        <item>@mipmap/xinyongka</item>
+        <item>@mipmap/huochegaotieditiepiao</item>
+        <item>@mipmap/tree</item>
+        <item>@mipmap/chongzhi</item>
+        <item>@mipmap/liwu</item>
+        <item>@mipmap/yiliao</item>
+        <item>@mipmap/chaoshi</item>
+        <item>@mipmap/shenghuofuwu</item>
+        <item>@mipmap/aixinkuaizhuang</item>
+        <item>@mipmap/jianshen</item>
+        <item>@mipmap/shu</item>
+        <item>@mipmap/right_child</item>
+        <item>@mipmap/yixuemeirong</item>
+        <item>@mipmap/gongyu</item>
+        <item>@mipmap/gongyi</item>
+        <item>@mipmap/meituanhuzhu</item>
+        <item>@mipmap/meituanwaimai</item>
+    </array>
+</resources>
