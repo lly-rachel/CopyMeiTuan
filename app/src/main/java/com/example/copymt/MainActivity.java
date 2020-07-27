@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Outline;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewOutlineProvider;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -64,13 +68,16 @@ public class MainActivity extends AppCompatActivity {
         initBanner();
         initIconDatas();
         initGridView();
+        initPopWindow();
 //        initStutas();
         initBottomNavigationBar();
     }
 
-    private void initBanner() {
+    private void initPopWindow() {
 
-        Banner banner = findViewById(R.id.banner);
+    }
+
+    private void initBanner() {
 
         List<Integer> images = new ArrayList<>();
         images.add(R.mipmap.pa);
@@ -80,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         images.add(R.mipmap.pe);
         images.add(R.mipmap.pf);
 
+        Banner banner = findViewById(R.id.banner);
         //右下方圆点
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR)
                 .setImageLoader(new GlideImageLoader())
@@ -87,8 +95,9 @@ public class MainActivity extends AppCompatActivity {
                 .setImages(images)
                 .isAutoPlay(true)
                 .setIndicatorGravity(BannerConfig.RIGHT)
-                .setDelayTime(4000)
-                .start();
+                .setDelayTime(4000);
+
+        banner.start();
     }
 
     private void initGridView() {

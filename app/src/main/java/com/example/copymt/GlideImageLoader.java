@@ -1,6 +1,8 @@
 package com.example.copymt;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -10,9 +12,18 @@ public class GlideImageLoader extends ImageLoader {
 
     @Override
     public void displayImage(Context context, Object path, ImageView imageView) {
+
         Glide.with(context.getApplicationContext())
                 .load(path)
                 .into(imageView);
     }
+
+    @Override
+    public ImageView createImageView(Context context) {
+        RoundImageView img = new RoundImageView(context);
+        return img;
+
+    }
+
 
 }
