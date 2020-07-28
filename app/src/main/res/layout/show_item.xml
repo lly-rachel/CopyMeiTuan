@@ -114,6 +114,7 @@
             android:layout_height="20dp"
             android:src="@mipmap/gengduo"
             android:layout_toRightOf="@+id/yishou_pingjia"
+            android:layout_marginLeft="20dp"
             android:layout_below="@+id/price"
             />
         </RelativeLayout>
