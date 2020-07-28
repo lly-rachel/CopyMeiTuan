@@ -59,11 +59,16 @@ public class MainActivity extends AppCompatActivity {
         //隐藏软键盘
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
+        //沉浸式
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().setStatusBarColor(getResources().getColor(R.color.mainColor));
+
+
         initBanner();
         initIconDatas();
         initGridView();
         initPopWindow();
-//        initStutas();
         initBottomNavigationBar();
     }
 
@@ -122,13 +127,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
-
-    private void initStutas() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            findViewById(android.R.id.content).setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-        }
     }
 
     private void initBottomNavigationBar() {
