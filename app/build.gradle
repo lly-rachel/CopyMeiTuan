@@ -46,4 +46,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 
     implementation 'com.youth.banner:banner:1.4.10'
+
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha02'
+    implementation 'androidx.cardview:cardview:1.0.0'
 }
